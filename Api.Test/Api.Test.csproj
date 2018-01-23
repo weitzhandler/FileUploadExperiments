@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+
+    <StartupObject></StartupObject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+    <DefineConstants>TRACE;DEBUG;NETCOREAPP2_0;TEST</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="FilesControllerTests.cs" />
+    <Compile Remove="StreamingControllerTests.cs" />
+    <Compile Remove="Trash\FilesControllerTests.cs" />
+    <Compile Remove="Trash\StreamingControllerTests.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DryIoc" Version="2.12.5" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="2.0.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Api\Api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="HugeFile.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Container\" />
+    <Folder Include="Trash\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="C:\Users\Shimmy\.nuget\packages\dryioc\2.12.5\contentFiles\cs\any\Container.cs" Link="Container\Container.cs" />
+    <Compile Update="C:\Users\Shimmy\.nuget\packages\dryioc\2.12.5\contentFiles\cs\any\FastExpressionCompiler.cs" Link="Container\FastExpressionCompiler.cs" />
+    <Compile Update="C:\Users\Shimmy\.nuget\packages\dryioc\2.12.5\contentFiles\cs\any\ImTools.cs" Link="Container\ImTools.cs" />
+    <Compile Update="C:\Users\Shimmy\.nuget\packages\dryioc\2.12.5\contentFiles\cs\any\Ported-net.cs" Link="Container\Ported-net.cs" />
+  </ItemGroup>                                          
+</Project>

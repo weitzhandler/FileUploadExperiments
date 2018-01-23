@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Api.Test\Services\FormDataContentDispositionHeaderValue.cs" Link="FormDataContentDispositionHeaderValue.cs" />
+    <Compile Include="..\Api.Test\Services\StreamWrappers.cs" Link="StreamWrappers.cs" />
+    <Compile Include="..\Api.Test\Tests\FilesControllerTests.cs" Link="FilesControllerTests.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DryIoc" Version="2.12.6" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="C:\Users\Shimmy\.nuget\packages\dryioc\2.12.6\contentFiles\cs\any\Container.cs" Link="Container\Container.cs" />
+    <Compile Update="C:\Users\Shimmy\.nuget\packages\dryioc\2.12.6\contentFiles\cs\any\FastExpressionCompiler.cs" Link="Container\FastExpressionCompiler.cs" />
+    <Compile Update="C:\Users\Shimmy\.nuget\packages\dryioc\2.12.6\contentFiles\cs\any\ImTools.cs" Link="Container\ImTools.cs" />
+    <Compile Update="C:\Users\Shimmy\.nuget\packages\dryioc\2.12.6\contentFiles\cs\any\Ported-net.cs" Link="Container\Ported-net.cs" />
+  </ItemGroup>
+
+  <Import Project="..\Shared\Shared.projitems" Label="Shared" />
+
+</Project>
